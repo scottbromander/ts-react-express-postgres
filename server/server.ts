@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import templateRouter from './routes/template.router';
 
-const app: any = express();
+const app: express.Application = express();
 
 // Body parser middleware
 app.use(bodyParser.json());

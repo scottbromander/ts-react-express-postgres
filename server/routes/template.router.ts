@@ -10,7 +10,17 @@ const router: express.Router = express.Router();
 router.get(
   '/',
   (req: Request, res: Response, next: express.NextFunction): void => {
-    res.send('Hello');
+    const queryString: string = `INSERT INTO "sample" ("cats") VALUES ($1)`;
+
+    pool
+      .query(queryString, ['Gizmo'])
+      .then((response: any): void => {
+        res.send(response);
+      })
+      .catch((err: string): void => {
+        console.log(err);
+        res.sendStatus(500);
+      });
   }
 );
 

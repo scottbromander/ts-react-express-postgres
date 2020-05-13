@@ -32,12 +32,12 @@ if (process.env.DATABASE_URL) {
   const port = process.env.PORT_DB ? process.env.PORT_DB : 5432;
   const database = process.env.POSTGRES_DB
     ? process.env.POSTGRES_DB
-    : 'prime_db';
+    : 'dijkstra';
 
   config = {
     host, // Server hosting the postgres database
-    user,
-    password,
+    // user,
+    // password,
     port,
     database, // name of application database
     max: 10, // max number of clients in the pool
